@@ -1,4 +1,9 @@
 class MoviesController < ApplicationController
+    def create
+        @movie = Movie.create!(params[:movie])
+        redirect_to movies_path
+    end
+    
     def index
         @movies = Movie.all
     end
