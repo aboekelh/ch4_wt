@@ -35,6 +35,12 @@ a {
     font-weight:  bold;
 }
 
+flash
+{
+    color: red;
+    text-align: center;
+}
+
 h1 {
     color: maroon;
     font-size: 150%;
