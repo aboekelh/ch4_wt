@@ -18,4 +18,23 @@ class MoviesController < ApplicationController
         @movie = Movie.new
         # default: render 'new' template
     end
+    
+    def edit
+        @movie = Movie.find params[:id]
+    end
+    
+    def update
+        @movie = Movie.find params[:id]
+        @movie.update_attribues!(params[:movie])
+        flash[:notice] = "#{@movie.title} was successfully updated."
+        redirect_to_movie_path(@movie)
+    end
+    
+    def destroy
+        @movie = Movie.find(params[:id])
+        @movie.destroy
+        flash[:notice] = "Movie 
+        #{@movie.title}' delected."
+        redirect_to movies_path
+    end
 end
